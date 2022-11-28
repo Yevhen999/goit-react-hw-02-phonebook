@@ -1,8 +1,14 @@
+/* .formData {
+  align-items: center;
+} */
+
 .formInput {
   background-color: yellow;
+  border-radius: 3px;
 }
 
 .formInput:focus-within {
+  outline-color: yellow;
   transform: scale(1.1);
 }
 
@@ -11,4 +17,5 @@
   display: block;
   border-radius: 5px;
   border-color: tomato;
+  background-color: white;
 }

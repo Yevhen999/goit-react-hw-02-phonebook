@@ -1,5 +1,6 @@
 import { Component } from 'react';
-import FormData from './FormData';
+// import ContactsList from './ContactsList';
+// import FormData from './FormData';
 
 class Contacts extends Component {
   // state = {
@@ -7,14 +8,16 @@ class Contacts extends Component {
   //   name: '',
   // };
 
-  formSubmitHandler = data => {
-    console.log(data);
-  };
+  // contactsRender = contacts => {
+  //   return contacts;
+  // };
 
   render() {
     return (
       <>
-        <FormData onSubmit={this.formSubmitHandler} />
+        <p>Contacts</p>
+
+        {/* <ContactsList contacts={this.contactsRender} /> */}
       </>
     );
   }
