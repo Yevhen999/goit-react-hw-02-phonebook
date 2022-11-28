@@ -2,6 +2,10 @@
   background-color: yellow;
 }
 
+.formInput:focus-within {
+  transform: scale(1.1);
+}
+
 .btnSubmit {
   margin-top: 10px;
   display: block;
