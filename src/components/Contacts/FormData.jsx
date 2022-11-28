@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import css from './Contacts.module.css';
 
 class FormData extends Component {
   state = {
@@ -6,21 +7,25 @@ class FormData extends Component {
     name: '',
   };
 
-  handleName = event => {
-    console.log(event.target.value);
+  handleNameChange = event => {
+    this.setState({ name: event.target.value });
   };
 
   render() {
     return (
       <form action="">
         <input
-          onChange={this.handleName}
+          className={css.formInput}
+          onChange={this.handleNameChange}
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
         />
+        <button className={css.btnSubmit} type="submit">
+          Add contact
+        </button>
       </form>
     );
   }

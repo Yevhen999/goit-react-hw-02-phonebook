@@ -10,7 +10,7 @@ class Contacts extends Component {
   render() {
     return (
       <>
-        <FormData />;
+        <FormData />
       </>
     );
   }

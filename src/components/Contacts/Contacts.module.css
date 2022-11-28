@@ -1,0 +1,10 @@
+.formInput {
+  background-color: yellow;
+}
+
+.btnSubmit {
+  margin-top: 10px;
+  display: block;
+  border-radius: 5px;
+  border-color: tomato;
+}
