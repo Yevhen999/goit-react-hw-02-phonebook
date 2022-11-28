@@ -6,11 +6,12 @@ class App extends Component {
   //   contacts: [],
   //   name: '',
   // };
+
   render() {
     return (
       <div
         style={{
-          height: '100vh',
+          height: '100%',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',

@@ -11,9 +11,14 @@ class FormData extends Component {
     this.setState({ name: event.target.value });
   };
 
+  handleSubmit = event => {
+    event.preventDefault();
+    this.props.onSubmit(this.state);
+  };
+
   render() {
     return (
-      <form action="">
+      <form onSubmit={this.handleSubmit}>
         <input
           className={css.formInput}
           onChange={this.handleNameChange}

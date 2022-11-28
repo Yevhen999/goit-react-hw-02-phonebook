@@ -2,15 +2,19 @@ import { Component } from 'react';
 import FormData from './FormData';
 
 class Contacts extends Component {
-  state = {
-    contacts: [],
-    name: '',
+  // state = {
+  //   contacts: [],
+  //   name: '',
+  // };
+
+  formSubmitHandler = data => {
+    console.log(data);
   };
 
   render() {
     return (
       <>
-        <FormData />
+        <FormData onSubmit={this.formSubmitHandler} />
       </>
     );
   }
