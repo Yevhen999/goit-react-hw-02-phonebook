@@ -28,6 +28,7 @@ class FormData extends Component {
           className={css.formInput}
           onChange={this.handleNameChange}
           type="text"
+          value={this.state.name}
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
