@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import FormContactsAdding from './FormData';
+import FormData from './FormData';
 
 class Contacts extends Component {
   state = {
@@ -10,7 +10,7 @@ class Contacts extends Component {
   render() {
     return (
       <>
-        <FormContactsAdding />;
+        <FormData />;
       </>
     );
   }

@@ -2,6 +2,10 @@ import { Component } from 'react';
 import Contacts from './Contacts/Contacts';
 
 class App extends Component {
+  // state = {
+  //   contacts: [],
+  //   name: '',
+  // };
   render() {
     return (
       <div
