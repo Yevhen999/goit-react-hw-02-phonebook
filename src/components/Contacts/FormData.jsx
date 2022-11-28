@@ -8,12 +8,17 @@ class FormData extends Component {
   };
 
   handleNameChange = event => {
-    this.setState({ name: event.target.value });
+    this.setState({ name: event.currentTarget.value });
   };
 
   handleSubmit = event => {
     event.preventDefault();
     this.props.onSubmit(this.state);
+    this.reset();
+  };
+
+  reset = () => {
+    this.setState({ contacts: [], name: '' });
   };
 
   render() {
