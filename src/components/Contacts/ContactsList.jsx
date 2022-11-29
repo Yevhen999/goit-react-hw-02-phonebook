@@ -4,7 +4,7 @@ const ContactsList = ({ contacts }) => {
   return (
     <ul>
       {contacts.map(contact => {
-        const id = nanoid();
+        const id = nanoid(10);
         return <li key={id}>{contact}</li>;
       })}
     </ul>
