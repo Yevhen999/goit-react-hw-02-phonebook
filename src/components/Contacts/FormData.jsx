@@ -8,7 +8,10 @@ class FormData extends Component {
   };
 
   handleNameChange = event => {
-    this.setState({ name: event.currentTarget.value });
+    this.setState({
+      name: event.currentTarget.value,
+      contacts: [event.currentTarget.value],
+    });
   };
 
   handleSubmit = event => {
@@ -23,7 +26,7 @@ class FormData extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className={css.formData} onSubmit={this.handleSubmit}>
         <input
           className={css.formInput}
           onChange={this.handleNameChange}

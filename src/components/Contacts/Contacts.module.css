@@ -1,6 +1,6 @@
-/* .formData {
-  align-items: center;
-} */
+.formData {
+  padding: 40px;
+}
 
 .formInput {
   background-color: yellow;

@@ -5,12 +5,20 @@ import FormData from './Contacts/FormData';
 
 class App extends Component {
   state = {
-    contacts: [1, 2],
+    contacts: [],
     name: '',
   };
 
+  // this.setState(curState => {
+  //         return { neutral: curState.neutral + 1 };
+  //       });
+
   formSubmitHandler = data => {
-    console.log(data);
+    const { contacts } = this.state;
+    this.setState(curState => {
+      const newContact = contacts.push(data.name);
+      return { contacts: [newContact] };
+    });
   };
 
   render() {
