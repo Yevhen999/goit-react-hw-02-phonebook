@@ -1,4 +1,3 @@
-import { nanoid } from 'nanoid';
 import { Component } from 'react';
 import Contacts from './Contacts/Contacts';
 import ContactsList from './Contacts/ContactsList';
@@ -9,10 +8,6 @@ class App extends Component {
     contacts: [],
     name: '',
   };
-
-  // this.setState(curState => {
-  //         return { neutral: curState.neutral + 1 };
-  //       });
 
   formSubmitHandler = data => {
     this.setState(curState => {
@@ -25,16 +20,13 @@ class App extends Component {
       <div
         style={{
           height: '100%',
-          // display: 'flex',
-          // justifyContent: 'center',
-          // alignItems: 'center',
           fontSize: 40,
           color: '#010101',
         }}
       >
         <FormData onSubmit={this.formSubmitHandler} />
         <Contacts />
-        <ContactsList id={nanoid()} contacts={this.state.contacts} />
+        <ContactsList contacts={this.state.contacts} />
       </div>
     );
   }
