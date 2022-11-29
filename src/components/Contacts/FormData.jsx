@@ -27,6 +27,7 @@ class FormData extends Component {
   render() {
     return (
       <form className={css.formData} onSubmit={this.handleSubmit}>
+        <label htmlFor="">Name</label>
         <input
           className={css.formInput}
           onChange={this.handleNameChange}

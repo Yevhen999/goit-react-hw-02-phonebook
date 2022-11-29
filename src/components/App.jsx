@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import Contacts from './Contacts/Contacts';
 import ContactsList from './Contacts/ContactsList';
 import FormData from './Contacts/FormData';
 
@@ -16,6 +15,7 @@ class App extends Component {
   };
 
   render() {
+    const { contacts } = this.state;
     return (
       <div
         style={{
@@ -24,9 +24,10 @@ class App extends Component {
           color: '#010101',
         }}
       >
+        <h2>Phonebook</h2>
         <FormData onSubmit={this.formSubmitHandler} />
-        <Contacts />
-        <ContactsList contacts={this.state.contacts} />
+        <h2>Contacts</h2>
+        <ContactsList contacts={contacts} />
       </div>
     );
   }

@@ -1,8 +1,9 @@
 .formData {
-  padding: 40px;
+  padding: 20px;
 }
 
 .formInput {
+  display: block;
   background-color: yellow;
   border-radius: 3px;
 }
