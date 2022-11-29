@@ -6,9 +6,11 @@ class FormData extends Component {
   state = {
     contacts: [],
     name: '',
+    number: '',
   };
 
   nameInputId = nanoid(10);
+  numberInputId = nanoid(10);
 
   handleNameChange = event => {
     this.setState({
@@ -41,6 +43,16 @@ class FormData extends Component {
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
           id={this.nameInputId}
+        />
+        <label htmlFor={this.numberInputId}>Number</label>
+        <input
+          className={css.formInput}
+          type="tel"
+          name="number"
+          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+          required
+          id={this.numberInputId}
         />
         <button className={css.btnSubmit} type="submit">
           Add contact
