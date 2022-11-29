@@ -1,3 +1,4 @@
+import { nanoid } from 'nanoid';
 import { Component } from 'react';
 import css from './Contacts.module.css';
 
@@ -6,6 +7,8 @@ class FormData extends Component {
     contacts: [],
     name: '',
   };
+
+  nameInputId = nanoid(10);
 
   handleNameChange = event => {
     this.setState({
@@ -27,7 +30,7 @@ class FormData extends Component {
   render() {
     return (
       <form className={css.formData} onSubmit={this.handleSubmit}>
-        <label htmlFor="">Name</label>
+        <label htmlFor={this.nameInputId}>Name</label>
         <input
           className={css.formInput}
           onChange={this.handleNameChange}
@@ -37,6 +40,7 @@ class FormData extends Component {
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
+          id={this.nameInputId}
         />
         <button className={css.btnSubmit} type="submit">
           Add contact
