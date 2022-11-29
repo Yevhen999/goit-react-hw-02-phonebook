@@ -1,10 +1,8 @@
-import { nanoid } from 'nanoid';
-
-const ContactsList = ({ contacts }) => {
+const ContactsList = ({ contacts, id }) => {
   return (
     <ul>
       {contacts.map(contact => (
-        <li key={nanoid}>{contact}</li>
+        <li key={id}>{contact}</li>
       ))}
     </ul>
   );
