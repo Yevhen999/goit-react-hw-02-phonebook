@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import ContactsList from './Contacts/ContactsList';
 import FormData from './Contacts/FormData';
+import { nanoid } from 'nanoid';
 
 class App extends Component {
   state = {
@@ -11,9 +12,14 @@ class App extends Component {
 
   formSubmitHandler = data => {
     const { name, number } = data;
+    const contact = {
+      id: nanoid(),
+      name,
+      number,
+    };
     this.setState(curState => {
       return {
-        contacts: [`📞${name}: ${number}`, ...curState.contacts],
+        contacts: [contact, ...curState.contacts],
       };
     });
   };
@@ -38,9 +44,9 @@ class App extends Component {
             backgroundColor: 'yellow',
           }}
         >
-          <h2>📱Phonebook</h2>
+          <h1>📱Phonebook</h1>
           <FormData onSubmit={this.formSubmitHandler} />
-          <h2>📃Contacts</h2>
+          <h1>📃Contacts</h1>
           <ContactsList contacts={contacts} />
         </div>
       </div>

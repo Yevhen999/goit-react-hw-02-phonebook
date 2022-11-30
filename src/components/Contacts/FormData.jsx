@@ -24,7 +24,7 @@ class FormData extends Component {
   };
 
   reset = () => {
-    this.setState({ contacts: [], name: '', number: '' });
+    this.setState({ name: '', number: '' });
   };
 
   render() {

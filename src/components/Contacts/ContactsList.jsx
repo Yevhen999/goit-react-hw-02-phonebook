@@ -1,12 +1,14 @@
 import css from './Contacts.module.css';
 
-const ContactsList = ({ contacts, id }) => {
+const ContactsList = ({ contacts }) => {
   return (
     <ul>
       {contacts.map(contact => {
         return (
-          <li key={contact}>
-            <p className={css.contactItem}>{contact}</p>
+          <li key={contact.id}>
+            <p className={css.contactItem}>
+              {contact.name}: {contact.number}
+            </p>
           </li>
         );
       })}
