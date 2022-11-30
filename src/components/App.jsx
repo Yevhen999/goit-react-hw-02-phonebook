@@ -11,7 +11,9 @@ class App extends Component {
 
   formSubmitHandler = data => {
     this.setState(curState => {
-      return { contacts: [data.name, ...curState.contacts] };
+      return {
+        contacts: [`${data.name}: ${data.number}`, ...curState.contacts],
+      };
     });
   };
 

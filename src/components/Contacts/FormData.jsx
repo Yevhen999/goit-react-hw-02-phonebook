@@ -4,7 +4,6 @@ import css from './Contacts.module.css';
 
 class FormData extends Component {
   state = {
-    contacts: [],
     name: '',
     number: '',
   };
@@ -12,10 +11,9 @@ class FormData extends Component {
   nameInputId = nanoid(10);
   numberInputId = nanoid(10);
 
-  handleNameChange = event => {
+  handleInputChange = event => {
     this.setState({
-      name: event.currentTarget.value,
-      contacts: [event.currentTarget.value],
+      [event.currentTarget.name]: event.currentTarget.value,
     });
   };
 
@@ -26,7 +24,7 @@ class FormData extends Component {
   };
 
   reset = () => {
-    this.setState({ contacts: [], name: '' });
+    this.setState({ contacts: [], name: '', number: '' });
   };
 
   render() {
@@ -35,7 +33,7 @@ class FormData extends Component {
         <label htmlFor={this.nameInputId}>Name</label>
         <input
           className={css.formInput}
-          onChange={this.handleNameChange}
+          onChange={this.handleInputChange}
           type="text"
           value={this.state.name}
           name="name"
@@ -47,7 +45,9 @@ class FormData extends Component {
         <label htmlFor={this.numberInputId}>Number</label>
         <input
           className={css.formInput}
+          onChange={this.handleInputChange}
           type="tel"
+          value={this.state.number}
           name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
