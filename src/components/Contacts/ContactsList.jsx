@@ -7,7 +7,7 @@ const ContactsList = ({ contacts }) => {
         return (
           <li key={contact.id}>
             <p className={css.contactItem}>
-              {contact.name}: {contact.number}
+              📞{contact.name}: {contact.number}
             </p>
           </li>
         );

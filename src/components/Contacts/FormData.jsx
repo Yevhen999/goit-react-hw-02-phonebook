@@ -8,8 +8,8 @@ class FormData extends Component {
     number: '',
   };
 
-  nameInputId = nanoid(10);
-  numberInputId = nanoid(10);
+  nameInputId = nanoid(5);
+  numberInputId = nanoid(5);
 
   handleInputChange = event => {
     this.setState({
@@ -59,7 +59,7 @@ class FormData extends Component {
           id={this.numberInputId}
         />
         <button className={css.btnSubmit} type="submit">
-          Add contact
+          ➕Add contact
         </button>
       </form>
     );
