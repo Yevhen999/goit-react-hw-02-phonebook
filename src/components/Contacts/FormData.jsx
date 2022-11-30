@@ -29,8 +29,10 @@ class FormData extends Component {
 
   render() {
     return (
-      <form className={css.formData} onSubmit={this.handleSubmit}>
-        <label htmlFor={this.nameInputId}>Name</label>
+      <form onSubmit={this.handleSubmit}>
+        <label className={css.formLabel} htmlFor={this.nameInputId}>
+          👤Name
+        </label>
         <input
           className={css.formInput}
           onChange={this.handleInputChange}
@@ -42,7 +44,9 @@ class FormData extends Component {
           required
           id={this.nameInputId}
         />
-        <label htmlFor={this.numberInputId}>Number</label>
+        <label className={css.formLabel} htmlFor={this.numberInputId}>
+          🔢Number
+        </label>
         <input
           className={css.formInput}
           onChange={this.handleInputChange}

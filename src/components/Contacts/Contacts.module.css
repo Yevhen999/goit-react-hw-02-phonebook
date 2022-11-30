@@ -1,22 +1,35 @@
-.formData {
-  padding: 20px;
+.formLabel {
+  display: inline-block;
+  margin-top: 10px;
 }
 
 .formInput {
   display: block;
-  background-color: yellow;
+  margin-top: 10px;
   border-radius: 3px;
 }
 
 .formInput:focus-within {
-  outline-color: yellow;
+  outline-color: tomato;
   transform: scale(1.1);
 }
 
 .btnSubmit {
-  margin-top: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   display: block;
   border-radius: 5px;
-  border-color: tomato;
-  background-color: white;
+  border-color: black;
+  background-color: tomato;
+  color: yellow;
+}
+
+.btnSubmit:hover {
+  transform: scale(1.05);
+}
+
+.contactItem {
+  margin-top: 10px;
 }

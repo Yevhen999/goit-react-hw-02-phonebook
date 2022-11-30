@@ -10,9 +10,10 @@ class App extends Component {
   };
 
   formSubmitHandler = data => {
+    const { name, number } = data;
     this.setState(curState => {
       return {
-        contacts: [`${data.name}: ${data.number}`, ...curState.contacts],
+        contacts: [`📞${name}: ${number}`, ...curState.contacts],
       };
     });
   };
@@ -22,15 +23,26 @@ class App extends Component {
     return (
       <div
         style={{
+          display: 'flex',
+          justifyContent: 'center',
+
           height: '100%',
-          fontSize: 40,
           color: '#010101',
         }}
       >
-        <h2>Phonebook</h2>
-        <FormData onSubmit={this.formSubmitHandler} />
-        <h2>Contacts</h2>
-        <ContactsList contacts={contacts} />
+        <div
+          style={{
+            border: '2px solid tomato',
+            borderRadius: '5px',
+            padding: '20px',
+            backgroundColor: 'yellow',
+          }}
+        >
+          <h2>📱Phonebook</h2>
+          <FormData onSubmit={this.formSubmitHandler} />
+          <h2>📃Contacts</h2>
+          <ContactsList contacts={contacts} />
+        </div>
       </div>
     );
   }
