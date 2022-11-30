@@ -1,11 +1,15 @@
 .formLabel {
-  display: inline-block;
+  display: block;
   margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .formInput {
-  display: block;
   margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   border-radius: 3px;
 }
 
