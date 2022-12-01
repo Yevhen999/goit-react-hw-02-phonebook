@@ -7,27 +7,30 @@ import { Filter } from './Contacts/Filter';
 class App extends Component {
   state = {
     contacts: [],
-    name: '',
-    number: '',
     filter: '',
   };
 
   formSubmitHandler = data => {
     const { name, number } = data;
-    const contact = {
+    const newContact = {
       id: nanoid(5),
       name,
       number,
     };
+
+    for (const contact of this.state.contacts) {
+      if (newContact.name.toLowerCase() === contact.name.toLowerCase()) {
+        alert(`${newContact.name} is already in contacts`);
+        return;
+      }
+    }
+
     this.setState(curState => {
-      return {
-        contacts: [contact, ...curState.contacts],
-      };
+      return { contacts: [newContact, ...curState.contacts] };
     });
   };
 
   changeFilter = event => {
-    console.log(event.target);
     this.setState({ filter: event.currentTarget.value });
   };
 
