@@ -1,6 +1,6 @@
 import css from './Contacts.module.css';
 
-const ContactsList = ({ contacts }) => {
+const ContactsList = ({ contacts, deleteContact }) => {
   return (
     <ul>
       {contacts.map(contact => {
@@ -9,6 +9,7 @@ const ContactsList = ({ contacts }) => {
             <p className={css.contactItem}>
               📞{contact.name}: {contact.number}
             </p>
+            <button onClick={() => deleteContact(contact.id)}>Delete</button>
           </li>
         );
       })}
