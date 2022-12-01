@@ -51,7 +51,7 @@ class App extends Component {
     const normalizedFilter = filter.toLowerCase();
 
     const visibleContacts = this.state.contacts.filter(contact =>
-      contact.name.includes(normalizedFilter)
+      contact.name.toLowerCase().includes(normalizedFilter)
     );
 
     return (
