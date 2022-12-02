@@ -41,7 +41,9 @@ class App extends Component {
 
   deleteContact = contactId => {
     this.setState(curState => ({
-      contacts: curState.contacts.filter(contact => contact.id !== contactId),
+      contacts: curState.contacts.filter(contact => {
+        return contact.id !== contactId;
+      }),
     }));
   };
 
@@ -76,7 +78,7 @@ class App extends Component {
           <h1>📃Contacts</h1>
           <Filter filter={filter} onChange={this.changeFilter} />
           <ContactsList
-            contacts={visibleContacts}
+            items={visibleContacts}
             deleteContact={this.deleteContact}
           />
         </div>
@@ -86,3 +88,14 @@ class App extends Component {
 }
 
 export default App;
+
+// ContactsList.propTypes = {
+//   items: PropTypes.arrayOf(
+//     PropTypes.exact({
+//       id: PropTypes.string.isRequired,
+//       name: PropTypes.string.isRequired,
+//       number: PropTypes.string.isRequired,
+//     })
+//   ),
+//   deleteContact: PropTypes.func.isRequired,
+// };

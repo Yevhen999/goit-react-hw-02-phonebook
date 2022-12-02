@@ -1,20 +1,31 @@
-import css from './Contacts.module.css';
+import { ContactItem } from './ContactsItem';
+import PropTypes from 'prop-types';
 
-const ContactsList = ({ contacts, deleteContact }) => {
+const ContactsList = ({ items, deleteContact }) => {
   return (
     <ul>
-      {contacts.map(contact => {
-        return (
-          <li key={contact.id}>
-            <p className={css.contactItem}>
-              📞{contact.name}: {contact.number}
-            </p>
-            <button onClick={() => deleteContact(contact.id)}>Delete</button>
-          </li>
-        );
-      })}
+      {items.map(({ id, name, number }) => (
+        <ContactItem
+          key={id}
+          id={id}
+          name={name}
+          number={number}
+          deleteContact={deleteContact}
+        />
+      ))}
     </ul>
   );
 };
 
 export default ContactsList;
+
+ContactsList.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
+  ),
+  deleteContact: PropTypes.func.isRequired,
+};
