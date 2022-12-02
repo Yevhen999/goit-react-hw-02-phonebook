@@ -78,11 +78,15 @@ class App extends Component {
           <h1>📱Phonebook</h1>
           <FormData onSubmit={this.formSubmitHandler} />
           <h1>📃Contacts</h1>
-          <Filter filter={filter} onChange={this.changeFilter} />
-          <ContactsList
-            items={visibleContacts}
-            deleteContact={this.deleteContact}
-          />
+          {this.state.contacts.length > 0 && (
+            <>
+              <Filter filter={filter} onChange={this.changeFilter} />
+              <ContactsList
+                items={visibleContacts}
+                deleteContact={this.deleteContact}
+              />
+            </>
+          )}
         </div>
       </div>
     );
@@ -90,14 +94,3 @@ class App extends Component {
 }
 
 export default App;
-
-// ContactsList.propTypes = {
-//   items: PropTypes.arrayOf(
-//     PropTypes.exact({
-//       id: PropTypes.string.isRequired,
-//       name: PropTypes.string.isRequired,
-//       number: PropTypes.string.isRequired,
-//     })
-//   ),
-//   deleteContact: PropTypes.func.isRequired,
-// };
