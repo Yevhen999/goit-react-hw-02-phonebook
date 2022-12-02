@@ -47,14 +47,16 @@ class App extends Component {
     }));
   };
 
-  render() {
-    const { filter } = this.state;
-
-    const normalizedFilter = filter.toLowerCase();
-
-    const visibleContacts = this.state.contacts.filter(contact =>
+  getVisibleContacts = () => {
+    const normalizedFilter = this.state.filter.toLowerCase();
+    return this.state.contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizedFilter)
     );
+  };
+
+  render() {
+    const { filter } = this.state;
+    const visibleContacts = this.getVisibleContacts();
 
     return (
       <div
