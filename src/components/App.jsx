@@ -78,7 +78,7 @@ class App extends Component {
           <h1>📱Phonebook</h1>
           <FormData onSubmit={this.formSubmitHandler} />
           <h1>📃Contacts</h1>
-          {this.state.contacts.length > 0 && (
+          {this.state.contacts.length > 0 ? (
             <>
               <Filter filter={filter} onChange={this.changeFilter} />
               <ContactsList
@@ -86,6 +86,8 @@ class App extends Component {
                 deleteContact={this.deleteContact}
               />
             </>
+          ) : (
+            <p>There are no contacts</p>
           )}
         </div>
       </div>
