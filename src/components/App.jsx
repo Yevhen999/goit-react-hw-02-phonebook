@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import ContactsList from './Contacts/ContactsList';
-import FormData from './Contacts/FormData';
+import { FormData } from './Contacts/FormData';
 import { nanoid } from 'nanoid';
 import { Filter } from './Contacts/Filter';
 
@@ -76,7 +76,7 @@ class App extends Component {
           }}
         >
           <h1>📱Phonebook</h1>
-          <FormData onSubmit={this.formSubmitHandler} />
+          <FormData onFormSubmit={this.formSubmitHandler} />
           <h1>📃Contacts</h1>
           {this.state.contacts.length > 0 ? (
             <>
