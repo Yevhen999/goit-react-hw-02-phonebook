@@ -1,5 +1,6 @@
 import { nanoid } from 'nanoid';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { FcPhoneAndroid } from 'react-icons/fc';
 import PropTypes from 'prop-types';
 import css from './Contacts.module.css';
 import * as yup from 'yup';
@@ -43,7 +44,7 @@ export const FormData = ({ onFormSubmit }) => {
         />
         <ErrorMessage name="name" />
         <label className={css.formLabel} htmlFor={numberInputId}>
-          🔢Number
+          <FcPhoneAndroid width="20" height="20" /> Number
         </label>
         <Field
           className={css.formInput}
