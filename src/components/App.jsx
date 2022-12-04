@@ -3,6 +3,8 @@ import ContactsList from './Contacts/ContactsList';
 import { FormData } from './Contacts/FormData';
 import { nanoid } from 'nanoid';
 import { Filter } from './Contacts/Filter';
+import { RiGameFill } from 'react-icons/ri';
+import css from './Contacts/Contacts.module.css';
 
 class App extends Component {
   state = {
@@ -75,9 +77,23 @@ class App extends Component {
             backgroundColor: 'yellow',
           }}
         >
-          <h1>📱Phonebook</h1>
+          <div className={css.phonebookWrapper}>
+            <RiGameFill
+              size={25}
+              style={{
+                fill: 'tomato',
+              }}
+            />
+            <h1>Phonebook</h1>
+          </div>
           <FormData onFormSubmit={this.formSubmitHandler} />
-          <h1>📃Contacts</h1>
+          <h1
+            style={{
+              marginBottom: '10px',
+            }}
+          >
+            📃Contacts
+          </h1>
           {this.state.contacts.length > 0 ? (
             <>
               <Filter filter={filter} onChange={this.changeFilter} />

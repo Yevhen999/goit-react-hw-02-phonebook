@@ -6,8 +6,8 @@ export const ContactItem = ({ id, name, number, deleteContact }) => {
     <li>
       <p className={css.contactItem}>
         📞{name}: {number}
+        <button onClick={() => deleteContact(id)}>Delete</button>
       </p>
-      <button onClick={() => deleteContact(id)}>Delete</button>
     </li>
   );
 };

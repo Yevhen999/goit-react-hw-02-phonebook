@@ -1,6 +1,7 @@
 import { nanoid } from 'nanoid';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import { FcPhoneAndroid } from 'react-icons/fc';
+import { GiRotaryPhone } from 'react-icons/gi';
+import { HiUserCircle, HiUserAdd } from 'react-icons/hi';
 import PropTypes from 'prop-types';
 import css from './Contacts.module.css';
 import * as yup from 'yup';
@@ -30,9 +31,12 @@ export const FormData = ({ onFormSubmit }) => {
       validationSchema={schema}
     >
       <Form>
-        <label className={css.formLabel} htmlFor={nameInputId}>
-          👤Name
-        </label>
+        <div className={css.labelWrapper}>
+          <HiUserCircle className={css.formIcon} />
+          <label className={css.formLabel} htmlFor={nameInputId}>
+            Name
+          </label>
+        </div>
         <Field
           className={css.formInput}
           type="text"
@@ -41,11 +45,15 @@ export const FormData = ({ onFormSubmit }) => {
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
           id={nameInputId}
+          placeholder="John Doe"
         />
         <ErrorMessage name="name" />
-        <label className={css.formLabel} htmlFor={numberInputId}>
-          <FcPhoneAndroid width="20" height="20" /> Number
-        </label>
+        <div className={css.labelWrapper}>
+          <GiRotaryPhone className={css.formIcon} />
+          <label className={css.formLabel} htmlFor={numberInputId}>
+            Number
+          </label>
+        </div>
         <Field
           className={css.formInput}
           type="tel"
@@ -54,10 +62,12 @@ export const FormData = ({ onFormSubmit }) => {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
           id={numberInputId}
+          placeholder="xxx-xx-xx"
         />
         <ErrorMessage name="number" />
         <button className={css.btnSubmit} type="submit">
-          ➕Add contact
+          <HiUserAdd size={11} />
+          Add contact
         </button>
       </Form>
     </Formik>

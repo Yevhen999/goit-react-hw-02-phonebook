@@ -6,7 +6,14 @@ const filterId = nanoid(5);
 export const Filter = ({ filter, onChange }) => {
   return (
     <>
-      <label htmlFor={filterId}>Find contacts by name</label>
+      <label
+        style={{
+          marginRight: '10px',
+        }}
+        htmlFor={filterId}
+      >
+        Find contacts by name
+      </label>
       <input
         type="text"
         placeholder="🔍"
