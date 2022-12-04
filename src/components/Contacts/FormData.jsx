@@ -1,12 +1,12 @@
 import { nanoid } from 'nanoid';
-import { Field, Form, Formik } from 'formik';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
 import PropTypes from 'prop-types';
 import css from './Contacts.module.css';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
-  name: yup.string(7).required(),
-  number: yup.string(7).required(),
+  name: yup.string().min(2, 'Too short').required('❌'),
+  number: yup.string().length(9, 'Format: xxx-xx-xx').required('❌'),
 });
 
 export const FormData = ({ onFormSubmit }) => {
@@ -41,6 +41,7 @@ export const FormData = ({ onFormSubmit }) => {
           required
           id={nameInputId}
         />
+        <ErrorMessage name="name" />
         <label className={css.formLabel} htmlFor={numberInputId}>
           🔢Number
         </label>
@@ -53,6 +54,7 @@ export const FormData = ({ onFormSubmit }) => {
           required
           id={numberInputId}
         />
+        <ErrorMessage name="number" />
         <button className={css.btnSubmit} type="submit">
           ➕Add contact
         </button>
