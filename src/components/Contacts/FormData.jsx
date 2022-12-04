@@ -2,6 +2,12 @@ import { nanoid } from 'nanoid';
 import { Field, Form, Formik } from 'formik';
 import PropTypes from 'prop-types';
 import css from './Contacts.module.css';
+import * as yup from 'yup';
+
+const schema = yup.object().shape({
+  name: yup.string().required(),
+  number: yup.number(7).required(),
+});
 
 export const FormData = ({ onFormSubmit }) => {
   const nameInputId = nanoid(5);
