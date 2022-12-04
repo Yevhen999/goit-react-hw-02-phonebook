@@ -5,8 +5,8 @@ import css from './Contacts.module.css';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
-  name: yup.string().required(),
-  number: yup.number(7).required(),
+  name: yup.string(7).required(),
+  number: yup.string(7).required(),
 });
 
 export const FormData = ({ onFormSubmit }) => {
@@ -23,7 +23,11 @@ export const FormData = ({ onFormSubmit }) => {
     resetForm();
   };
   return (
-    <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+    <Formik
+      initialValues={initialValues}
+      onSubmit={handleSubmit}
+      validationSchema={schema}
+    >
       <Form>
         <label className={css.formLabel} htmlFor={nameInputId}>
           👤Name
